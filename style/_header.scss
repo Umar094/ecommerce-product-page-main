@@ -1,0 +1,157 @@
+header{
+    width: 100%;
+}
+
+.header__content-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid var( --grayish-blue);
+}
+
+.header__iside-icon{
+    display: none;
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.header__navigation{
+    display: flex;
+    height: 100%;
+    gap: 80px;
+}
+
+.main__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 100%
+}
+
+.main__list-item{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a{
+        color: hsl(0, 0%, 0%);
+
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-orange);
+            transition: width 200ms;
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+.header__logo-link{
+    flex-basis: 190px;
+}
+
+.header__logo{
+    height: 20px;
+}
+
+
+.header__avatar{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+
+    &:hover{
+        outline: 3px solid var(--primary-orange);
+    }
+}
+
+.header__cart-wrapper{
+    position: relative;
+}
+
+.header__how-much{
+    position: absolute;
+    top: -7px;
+    right: -10px;
+    padding: 2px 10px;
+    background-color: var(--primary-orange);
+    border-radius: 6px;
+    font-size: 0.6rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.cart-status{
+    display: none;
+}
+
+.header__cart{
+    cursor: pointer;
+}
+
+
+.header__user-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+}
+
+.aside-menu{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background-color: hsl(0, 0%, 0%, 0.3);
+}
+
+.aside-active{
+    display: none;
+}
+
+.aside-menu__content-wrapper{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 70%;
+    padding: 20px;
+}
+
+.aside-menu__img-wrapper{
+    margin-bottom: 50px;
+}
+
+.aside-menu__close-icon{
+    width: 20px;
+    height: auto;
+}
+
+.aside-menu__link{
+    display: block;
+    color: var(--text-color);
+    font-family:  kumbhSans-Bold;
+    font-size: 1.4rem;
+}
+
+.aside-menu__link:not(:last-child){
+    margin-bottom: 24px;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style/style.css">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body>
+  <header class="header">
+      <div class="header__content-wrapper container">
+        <img data-icon-menu src="./images/icon-menu.svg" alt="menu" class="header__iside-icon" onclick="openAside()">
+
+        <a href="#" class="header__logo-link">
+          <img class="header__logo" src="./images/logo.svg" alt="logo">
+        </a>
+        
+        <ul class="main__list">
+          <li class="main__list-item">
+            <a href="">Collections</a>
+          </li>
+          <li class="main__list-item">
+            <a href="">Men</a>
+          </li>
+          <li class="main__list-item">
+            <a href="">Women</a>
+          </li>
+          <li class="main__list-item">
+            <a href="">About</a>
+          </li>
+          <li class="main__list-item">
+            <a href="">Contact</a>
+          </li>
+        </ul>
+          
+        <div class="header__user-wrapper">
+
+
+            <div class="header__cart-wrapper">
+              <img class="header__cart" src="./images/icon-cart.svg" alt="cart" onclick="openCart()">
+              <span class="header__how-much cart-status"></span>
+            </div>
+
+
+            <div class="cart-dropdown">
+
+              <div class=cart-dropdown__header>
+                <span>Cart</span>
+              </div>
+
+              <div class="cart-dropdown__main">
+                <div  class="cart-dropdown__main-empty">
+                  <span>Your cart is empty.</span>
+                </div>
+              </div>
+
+            </div>
+
+          <img class="header__avatar" src="./images/image-avatar.png" alt="account">
+        </div>
+      </div>
+  </header>
+
+  <div data-aside-menu class="aside-menu aside-active">
+    <div class="aside-menu__content-wrapper">
+      <div class="aside-menu__img-wrapper">
+        <img data-close-icon src="./images/icon-close.svg" alt="close" class="aside-menu__close-icon" onclick="closeAside()">
+      </div>
+      <div>
+        <a href="#" class="aside-menu__link">Collections</a>
+        <a href="#" class="aside-menu__link">Men</a>
+        <a href="#" class="aside-menu__link">Women</a>
+        <a href="#" class="aside-menu__link">About</a>
+        <a href="#" class="aside-menu__link">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+
+    <div class="main__content-wrapper container">
+      <article class="main__images-box">
+        <div class="content-limiter">
+          <div class="main__mobile-slider-wrapper">
+
+            <div class="view-image__arrow-wrapper view-image__arrow-wrapper-prev mobile__arrow--transform-prev" onclick="previousImg()">
+              <svg class="view-image__arrow" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+
+            <img data-main-img class="main__img" src="/images/image-product-1.jpg" onclick="closeProductView()">
+
+            <div class="view-image__arrow-wrapper view-image__arrow-wrapper-next mobile__arrow--transform-next"  onclick="nextImg()">
+              <svg class="view-image__arrow view-image__arrow-next" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </div>
+          </div>
+
+          <div class="main__thumbnain-img-box">
+            <div class="main__thumbnail-image-wrapper">
+              <img src="./images/image-product-1-thumbnail.jpg" class="main__thumbnail-image">
+            </div>
+            <div class="main__thumbnail-image-wrapper">
+              <img src="./images/image-product-2-thumbnail.jpg" class="main__thumbnail-image">
+            </div>
+            <div class="main__thumbnail-image-wrapper">
+              <img src="./images/image-product-3-thumbnail.jpg" class="main__thumbnail-image">
+            </div>
+            <div class="main__thumbnail-image-wrapper">
+              <img src="./images/image-product-4-thumbnail.jpg" class="main__thumbnail-image">
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <article class="main__text-box">
+
+        <span class="main__company">sneaker Company</span>
+
+        <h1 class="main__tittle">Fall Limited Edition Sneakers</h1>
+        <p class="main__subtittle">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+        <div class="main__price-wrapper">
+          <div class="main__price-with-discount">
+            &#36;125.00
+            <span class="main__discount">50%</span>
+          </div>
+          <span class="main__price-before"><s>&#36;250.00</s></span>
+        </div>
+
+        <div class="main__btn-wrapper">
+          <div class="main__amount">
+            <img class="main__minus main__symbol" src="./images/icon-minus.svg" alt="-">
+            <span data-count>0</span>
+            <img class="main__plus main__symbol" src="./images/icon-plus.svg" alt="+">
+          </div>
+
+          <button class="main__btn" onclick="addProductToCart()">
+            <img class="main__cart-icon" src="./images/icon-cart-btn.svg">
+            Add to cart
+          </button>
+        </div>
+      </article>
+    </div>
+
+
+
+    <div class="view-image">
+
+      <div class="view-image__img-wrapper">
+
+        <div class="view-image__close-icon-wrapper">
+          <svg class="view-image__close-icon"  width="15" height="15" viewBox="0 0 15 15" onclick="closeViewImg(event)" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="currentColor" fill-rule="evenodd"/></svg>
+        </div>
+
+        <div class="view-image__main-img-wrapper">
+          <div class="view-image__arrow-wrapper view-image__arrow-wrapper-prev view-image__prev--transform-prev" onclick="previousImg(event)">
+            <svg class="view-image__arrow" width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </div>
+
+          <img class="view-image__img" src="./images/image-product-1.jpg">
+
+          <div class="view-image__arrow-wrapper view-image__arrow-wrapper-next view-image__next--transform-next"  onclick="nextImg(event)">
+            <svg class="view-image__arrow view-image__arrow-next" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </div>
+        </div>
+
+        
+        <div class="view-image__thumbnain-img-box">
+    
+          <div class="view-image__thumbnail-image-wrapper currentImg">
+            <img src="./images/image-product-1-thumbnail.jpg" class="view-image__thumbnail-image">
+          </div>
+          <div class="view-image__thumbnail-image-wrapper">
+            <img src="./images/image-product-2-thumbnail.jpg" class="view-image__thumbnail-image">
+          </div>
+          <div class="view-image__thumbnail-image-wrapper">
+            <img src="./images/image-product-3-thumbnail.jpg" class="view-image__thumbnail-image">
+          </div>
+          <div class="view-image__thumbnail-image-wrapper">
+            <img src="./images/image-product-4-thumbnail.jpg" class="view-image__thumbnail-image">
+          </div>
+    
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="./index.js"></script>
+</body>
+</html>
